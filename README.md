@@ -1,24 +1,5 @@
-\# Django Learning Journey 🚀
+# Django Learning
 
-
-
-This repository tracks my Django learning progress chapter by chapter.
-
-
-
-\## Chapter 1 – Django Basics ✅
-
-\- Project structure
-
-\- settings.py overview
-
-\- urls.py \& views.py
-
-\- Templates \& static files
-
-
-
-Learning approach: hands-on + daily consistency.
-
-
+This repository contains my Django learning journey.
+Chapter 1 covers basic project setup, views, templates, and static files.
 
