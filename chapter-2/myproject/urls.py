@@ -1,10 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
-from . import views  # CHANGE THIS BACK to '.' so it finds your homepage/about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage),
-    path('about/', views.about),
-    path('posts/', include('posts.urls'))
+    path('', include('posts.urls')), # This makes your posts list the main page
 ]
