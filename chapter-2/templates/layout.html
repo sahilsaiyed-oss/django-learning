@@ -8,7 +8,28 @@
     <script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
-    <h1> layout page </h1>
-    <p>we want to create a layout in this section</p>
+    <header>
+        <h1>My Django Learning Project</h1>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/about/">About</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <h2>Layout Page</h2>
+        <p>
+            This layout file is used as a base template.
+            Other pages will extend this layout using Django template inheritance.
+        </p>
+    </main>
+
+    <footer>
+        <hr>
+        <p>© 2026 • Learning Django step by step</p>
+    </footer>
 </body>
+
 </html>
