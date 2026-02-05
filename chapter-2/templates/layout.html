@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Django Learning</title>
+
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
+
     <header>
-        <h1>My Django Learning Project</h1>
+        <h1>Django Learning Journey 🚀</h1>
         <nav>
             <a href="/">Home</a> |
-            <a href="/about/">About</a>
+            <a href="/about">About</a>
         </nav>
+        <hr>
     </header>
 
-    <hr>
 
-    <main>
-        <h2>Layout Page</h2>
-        <p>
-            This layout file is used as a base template.
-            Other pages will extend this layout using Django template inheritance.
-        </p>
-    </main>
 
     <footer>
         <hr>
         <p>© 2026 • Learning Django step by step</p>
     </footer>
-</body>
 
+</body>
 </html>
