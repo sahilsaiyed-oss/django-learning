@@ -13,10 +13,17 @@ def home(request):
        
    ]
 
+
+   text = """
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima reprehenderit accusantium excepturi commodi amet modi nulla, architecto dolor libero cupiditate. Dignissimos fugiat possimus asperiores nam, assumenda quibusdam! Praesentium, sit assumenda.
+"""
    for people in peoples:
        print(people)
        
-   return render(request , "home/index.html" , context = {'peoples' : peoples})
+   return render(request, "home/index.html", {
+    'peoples': peoples,
+    'text': "text"
+})
 
 
 def success_page(request):
