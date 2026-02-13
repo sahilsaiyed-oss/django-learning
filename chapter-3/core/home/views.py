@@ -25,6 +25,13 @@ def home(request):
     'text': "text"
 })
 
+def about(request):
+    return render(request,"home/about.html")
+
+
+def contact(request):
+    return render(request,"home/contact.html")
+
 
 def success_page(request):
     print("*" * 10)
