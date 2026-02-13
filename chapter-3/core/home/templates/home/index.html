@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django Learning - Voting List</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; padding: 40px; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h2 { text-align: center; color: #333; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
-        th { background-color: #4CAF50; color: white; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
-        tr:hover { background-color: #f1f1f1; }
-        .status { font-size: 1.2em; }
-    </style>
-</head>
-<body>
+{% extends "home/base.html" %}
+
+{% block start %}
 
     <h1> this is index page </h1>
 
@@ -66,6 +50,4 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima reprehenderit accusantium excepturi commodi amet modi nulla, architecto dolor libero cupiditate. Dignissimos fugiat possimus asperiores nam, assumenda quibusdam! Praesentium, sit assumenda.
     </div>
 
-
-</body>
-</html>
+{% endblock %}

@@ -26,11 +26,13 @@ def home(request):
 })
 
 def about(request):
-    return render(request,"home/about.html")
+    context = {'page' : 'About'}
+    return render(request,"home/about.html",context)
 
 
 def contact(request):
-    return render(request,"home/contact.html")
+    context = {'page' : 'Contact'}
+    return render(request,"home/contact.html", context)
 
 
 def success_page(request):
