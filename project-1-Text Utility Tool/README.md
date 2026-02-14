@@ -26,3 +26,8 @@ project-1-Text Utility Tool/
 ├── templates/          # HTML Templates for UI
 ├── screenshots/        # Project visual documentation
 └── manage.py           # Django command-line utility
+
+
+
+
+<img width="1656" height="697" alt="Screenshot 2026-02-14 211809" src="https://github.com/user-attachments/assets/d6be38cc-500d-4896-8a0a-81400f8b947e" />
