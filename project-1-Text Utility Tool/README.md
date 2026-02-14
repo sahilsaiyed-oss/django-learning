@@ -1,36 +1,50 @@
-# Text Utility Tool (Django Project #1)
+# 📝 Text Utility Tool (Project #01)
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Django](https://img.shields.io/badge/django-%23092e20.svg?style=for-the-badge&logo=django&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/bootstrap-%23563d7c.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
+  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
+</p>
 
-## Overview
-Text Utility Tool is a lightweight web application built using the **Django** framework. It is designed to perform various string manipulation tasks such as case conversion, whitespace removal, and character analysis. This project focuses on backend logic processing and seamless frontend integration without the requirement of a database (Models).
+---
 
-## Key Features
-- **Case Transformation:** Convert input text to uppercase instantly.
-- **Whitespace Optimization:** Detect and remove redundant extra spaces within the text for better formatting.
-- **Character Analytics:** Provides a real-time count of total characters present in the provided input.
-- **Responsive UI:** A modern, mobile-responsive interface built with **Bootstrap 5** for an enhanced user experience.
+## 📖 Project Overview
+**Text Utility Tool** is a sophisticated web-based application developed using the **Django Web Framework**. It serves as a comprehensive utility for text manipulation, allowing users to perform operations like case conversion, whitespace cleaning, and character analysis through a seamless, real-time interface.
 
-## Technical Stack
-- **Backend:** Python 3.x, Django 5.x/6.x
-- **Frontend:** HTML5, CSS3, JavaScript (Bootstrap 5)
-- **Deployment/Version Control:** Git & GitHub
+This project was built to master the fundamentals of **Django Template Language (DTL)** and backend-to-frontend data flow without the overhead of a database.
 
-## Project Structure
+---
+
+## 🚀 Application Preview
+<p align="center">
+  <img src="demo.png" width="1000" alt="Application Screenshot" style="border-radius: 10px; box-shadow: 0px 10px 30px rgba(0,0,0,0.2);">
+</p>
+
+---
+
+## ✨ Key Features
+*   🔠 **Uppercase Transformation:** Instantly convert blocks of text to uppercase for better readability or specific formatting needs.
+*   🧹 **Whitespace Optimization:** An intelligent algorithm that detects and removes redundant spaces, leaving only single-space formatting.
+*   📊 **Character Analytics:** Provides a real-time count of total characters for precision editing.
+*   📱 **Responsive Design:** Fully optimized for mobile, tablet, and desktop environments using **Bootstrap 5**.
+
+---
+
+## 🛠️ Technical Stack
+| Category | Technology |
+| :--- | :--- |
+| **Language** | Python 3.13 |
+| **Framework** | Django 6.0 |
+| **Frontend** | HTML5, CSS3, Bootstrap 5 |
+| **Logic** | Python String Methods |
+
+---
+
+## 📂 Project Architecture
 ```text
 project-1-Text Utility Tool/
-├── core/               # Project configuration and settings
-├── home/               # Application logic (Views and URLs)
-├── templates/          # HTML Templates for UI
-├── screenshots/        # Project visual documentation
-└── manage.py           # Django command-line utility
-'''
-
-## Application Demo
-![Project Interface](demo.png)
-
-
-
-
+├── core/               # Main Project Settings
+├── home/               # Application Logic & Views
+├── templates/          # UI Component Files
+├── demo.png            # Visual Documentation
+└── manage.py           # Django Utility Script
