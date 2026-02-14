@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Analyzer Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>body { background-color: #f8f9fa; padding: 50px; } .card { padding: 20px; border-radius: 15px; shadow: 0 4px 15px rgba(0,0,0,0.1); }</style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h1 class="text-center mb-4">Text Analyzer Pro</h1>
+        <form action="/analyze/" method="post">
+            {% csrf_token %}
+            <textarea class="form-control mb-3" name="text" rows="6">{{ original_text }}</textarea>
+            <div class="d-flex justify-content-around mb-4">
+                <label><input type="checkbox" name="uppercase"> Uppercase</label>
+                <label><input type="checkbox" name="extraspace"> No Extra Space</label>
+                <label><input type="checkbox" name="charcount"> Char Count</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Analyze</button>
+        </form>
+        {% if analyzed_text %}
+        <hr><h3>{{ purpose }}</h3><div class="alert alert-success"><pre>{{ analyzed_text }}</pre></div>
+        {% if count %}<p>Count: {{ count }}</p>{% endif %}{% endif %}
+    </div>
+</div>
+</body>
+</html>
