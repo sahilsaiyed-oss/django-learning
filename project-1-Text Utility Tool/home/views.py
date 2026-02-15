@@ -27,3 +27,6 @@ def analyze(request):
     params['analyzed_text'] = djtext
     params['purpose'] = purpose
     return render(request, 'home/index.html', params)
+
+def custom_404(request, exception):
+    return render(request, 'home/404.html', status=404)
