@@ -8,6 +8,8 @@ def analyze(request):
     uppercase = request.POST.get('uppercase', 'off')
     extraspace = request.POST.get('extraspace', 'off')
     charcount = request.POST.get('charcount', 'off')
+    # NEW: Get wordcount checkbox status
+    wordcount = request.POST.get('wordcount', 'off')
 
     purpose = ""
     params = {'original_text': djtext}
@@ -24,9 +26,18 @@ def analyze(request):
         params['count'] = len(djtext)
         purpose += "| Character Counted "
 
+    # NEW: Word Count and Read Time Logic
+    if wordcount == "on":
+        words = len(djtext.split())
+        params['words'] = words
+        # Average reading speed is 200 words per minute
+        params['read_time'] = round(words / 200, 2)
+        purpose += "| Text Statistics Analyzed "
+
     params['analyzed_text'] = djtext
     params['purpose'] = purpose
     return render(request, 'home/index.html', params)
+
 
 def custom_404(request, exception):
     return render(request, 'home/404.html', status=404)

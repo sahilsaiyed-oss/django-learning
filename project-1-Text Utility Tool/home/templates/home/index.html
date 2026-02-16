@@ -23,7 +23,16 @@
         {% if analyzed_text %}
         <hr><h3>{{ purpose }}</h3><div class="alert alert-success"><pre>{{ analyzed_text }}</pre></div>
         {% if count %}<p>Count: {{ count }}</p>{% endif %}{% endif %}
+      <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" name="wordcount"> 
+    <label class="form-check-label">Word Count & Read Time</label>
+</div>  
     </div>
 </div>
 </body>
 </html>
+
+{% if words %}
+    <p><strong>Total Words:</strong> {{ words }}</p>
+    <p><strong>Estimated Read Time:</strong> {{ read_time }} minutes</p>
+{% endif %}
