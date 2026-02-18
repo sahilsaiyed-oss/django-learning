@@ -6,8 +6,9 @@ def index(request):
 def analyze(request):
     djtext = request.POST.get('text', 'default')
     uppercase = request.POST.get('uppercase', 'off')
-    # NEW: Get Title Case checkbox status
     titlecase = request.POST.get('titlecase', 'off')
+    # NEW: Get Reverse Text checkbox status
+    reverse = request.POST.get('reverse', 'off')
     extraspace = request.POST.get('extraspace', 'off')
     charcount = request.POST.get('charcount', 'off')
     wordcount = request.POST.get('wordcount', 'off')
@@ -19,10 +20,14 @@ def analyze(request):
         djtext = djtext.upper()
         purpose += "| Uppercase "
 
-    # NEW: Title Case Logic
     if titlecase == "on":
         djtext = djtext.title()
         purpose += "| Title Case "
+
+    # NEW: Reverse Text Logic using Python slicing [::-1]
+    if reverse == "on":
+        djtext = djtext[::-1]
+        purpose += "| Reversed Text "
 
     if extraspace == "on":
         djtext = " ".join(djtext.split())
