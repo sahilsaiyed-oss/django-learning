@@ -1,13 +1,15 @@
 from django.shortcuts import render
-
+import string
 def index(request):
     return render(request, 'home/index.html')
 
 def analyze(request):
     djtext = request.POST.get('text', 'default')
+    # NEW: Get Remove Punc checkbox status
+    removepunc = request.POST.get('removepunc', 'off')
+    
     uppercase = request.POST.get('uppercase', 'off')
     titlecase = request.POST.get('titlecase', 'off')
-    # NEW: Get Reverse Text checkbox status
     reverse = request.POST.get('reverse', 'off')
     extraspace = request.POST.get('extraspace', 'off')
     charcount = request.POST.get('charcount', 'off')
@@ -15,6 +17,16 @@ def analyze(request):
 
     purpose = ""
     params = {'original_text': djtext}
+
+    # NEW: Remove Punctuation Logic
+    if removepunc == "on":
+        punctuations = string.punctuation
+        analyzed = ""
+        for char in djtext:
+            if char not in punctuations:
+                analyzed = analyzed + char
+        djtext = analyzed
+        purpose += "| Removed Punctuations "
 
     if uppercase == "on":
         djtext = djtext.upper()
@@ -24,7 +36,6 @@ def analyze(request):
         djtext = djtext.title()
         purpose += "| Title Case "
 
-    # NEW: Reverse Text Logic using Python slicing [::-1]
     if reverse == "on":
         djtext = djtext[::-1]
         purpose += "| Reversed Text "
@@ -46,6 +57,7 @@ def analyze(request):
     params['analyzed_text'] = djtext
     params['purpose'] = purpose
     return render(request, 'home/index.html', params)
+
 
 def custom_404(request, exception):
     return render(request, 'home/404.html', status=404)
