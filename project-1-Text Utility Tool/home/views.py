@@ -5,9 +5,10 @@ def index(request):
 
 def analyze(request):
     djtext = request.POST.get('text', 'default')
-    # NEW: Get Remove Punc checkbox status
-    removepunc = request.POST.get('removepunc', 'off')
+    # NEW: Get New Line Remover status
+    newlineremove = request.POST.get('newlineremove', 'off')
     
+    removepunc = request.POST.get('removepunc', 'off')
     uppercase = request.POST.get('uppercase', 'off')
     titlecase = request.POST.get('titlecase', 'off')
     reverse = request.POST.get('reverse', 'off')
@@ -18,13 +19,16 @@ def analyze(request):
     purpose = ""
     params = {'original_text': djtext}
 
-    # NEW: Remove Punctuation Logic
+    # NEW: Remove New Lines Logic
+    if newlineremove == "on":
+        # .splitlines() handles both \n and \r
+        djtext = " ".join(djtext.splitlines())
+        purpose += "| Removed New Lines "
+
     if removepunc == "on":
+        import string
         punctuations = string.punctuation
-        analyzed = ""
-        for char in djtext:
-            if char not in punctuations:
-                analyzed = analyzed + char
+        analyzed = "".join([char for char in djtext if char not in punctuations])
         djtext = analyzed
         purpose += "| Removed Punctuations "
 
